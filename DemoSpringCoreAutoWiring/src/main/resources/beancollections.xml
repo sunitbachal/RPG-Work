@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="chatRoom" class="com.zensar.chatroom.ChatRoom">
+		<property name="chatRoomName" value="Tanhaai Nightz!" />
+		<property name="users">
+			<set>
+				<ref bean="userAmit" />
+				<ref bean="userAmit" />
+				<ref bean="userVishal" />
+				<ref bean="userVishal" />
+				<ref bean="userAmit" />
+			</set>
+		</property>
+
+		<property name="messages">
+			<map>
+				<entry key-ref="userAmit" value="I am from Pune" />
+				<entry key-ref="userSmita" value="I am from Baramati" />
+				<entry key-ref="userNandisha" value="I am from Surat!! " />
+				<entry key-ref="userVishal" value="Whats Up Aurangabad!!!" />
+			</map>
+		</property>
+		<property name="admins">
+			<list>
+				<value>Admin 1</value>
+				<value>Admin 2</value>
+				<value>Admin 3</value>
+				<value>Admin 4</value>
+			</list>
+		</property>
+
+
+	</bean>
+
+
+	<bean id="userAmit" class="com.zensar.chatroom.User">
+		<property name="userName" value="Amit" />
+		<property name="city" value="Pune" />
+	</bean>
+	<bean id="userSmita" class="com.zensar.chatroom.User">
+		<property name="userName" value="Smita" />
+		<property name="city" value="Baramati" />
+	</bean>
+	<bean id="userNandisha" class="com.zensar.chatroom.User">
+		<property name="userName" value="Nandisha" />
+		<property name="city" value="Surat" />
+	</bean>
+	<bean id="userVishal" class="com.zensar.chatroom.User">
+		<property name="userName" value="Vishal" />
+		<property name="city" value="Aurangabad" />
+	</bean>
+
+
+</beans>
